@@ -1,5 +1,4 @@
 import { ImageResponse } from 'next/server'
-
 import { getSharedChat } from '@/app/actions'
 
 export const runtime = 'edge'

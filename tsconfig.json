@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
@@ -25,10 +25,10 @@
     "strictNullChecks": true
   },
   "include": [
-    "next-env.d.ts",
+    "next-env.d.tsd.ts",
     "next-auth.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
