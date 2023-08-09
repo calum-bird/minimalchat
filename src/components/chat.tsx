@@ -83,10 +83,10 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
               >
                 signing up
               </a>{' '}
-              on the OpenAI website. This is only necessary for preview
-              environments so that the open source community can test the app.
-              The token will be saved to your browser&apos;s local storage under
-              the name <code className="font-mono">ai-token</code>.
+              on the OpenAI website. This ensures that Trelent does not retain
+              access to your prompts and subsequent results. The token will be
+              saved to your browser&apos;s local storage under the name
+              <code className="font-mono">ai-token</code>.
             </DialogDescription>
           </DialogHeader>
           <Input

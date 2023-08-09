@@ -40,9 +40,9 @@ export function ChatPanel({
               variant="outline"
               onClick={() => stop()}
               className="bg-background"
+              title="Stop generating response"
             >
-              <IconStop className="mr-2" />
-              Stop generating
+              <IconStop />
             </Button>
           ) : (
             messages?.length > 0 && (
@@ -50,28 +50,25 @@ export function ChatPanel({
                 variant="outline"
                 onClick={() => reload()}
                 className="bg-background"
+                title="Regenerate response"
               >
-                <IconRefresh className="mr-2" />
-                Regenerate response
+                <IconRefresh />
               </Button>
             )
           )}
         </div>
-        <div className="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4">
-          <PromptForm
-            onSubmit={async value => {
-              await append({
-                id,
-                content: value,
-                role: 'user'
-              })
-            }}
-            input={input}
-            setInput={setInput}
-            isLoading={isLoading}
-          />
-          <FooterText className="hidden sm:block" />
-        </div>
+        <PromptForm
+          onSubmit={async value => {
+            await append({
+              id,
+              content: value,
+              role: 'user'
+            })
+          }}
+          input={input}
+          setInput={setInput}
+          isLoading={isLoading}
+        />
       </div>
     </div>
   )
