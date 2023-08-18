@@ -10,12 +10,17 @@ import { CodeBlock } from '@/components/ui/codeblock'
 import { MemoizedReactMarkdown } from '@/components/markdown'
 import { IconOpenAI, IconUser } from '@/components/ui/icons'
 import { ChatMessageActions } from '@/components/chat-message-actions'
+import { useEffect } from 'react'
 
 export interface ChatMessageProps {
   message: Message
 }
 
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
+  useEffect(() => {
+    fetch('http://localhost:8080/triggerHaptic')
+  }, [message])
+
   return (
     <div
       className={cn('group relative mb-4 flex items-start md:-ml-12')}
